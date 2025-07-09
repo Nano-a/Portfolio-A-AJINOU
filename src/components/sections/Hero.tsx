@@ -160,7 +160,7 @@ export const Hero: React.FC = () => {
               >
                 <div className="w-full h-full rounded-full overflow-hidden bg-background">
                   <img
-                    src="/images/profile/abderrahman-profile.png"
+                    src="./images/profile/abderrahman-profile.png"
                     alt="Abderrahman AJINOU - Portrait professionnel"
                     className="w-full h-full object-cover"
                   />

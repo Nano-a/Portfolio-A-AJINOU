@@ -11,7 +11,7 @@ const testimonials = [
     company: "Université Paris Cité",
     content: "En attente de son témoignage.",
     rating: 5,
-    avatar: "/images/testimonials/sarah.png"
+    avatar: "./images/testimonials/sarah.png"
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const testimonials = [
     company: "Université Paris Cité",
     content: "En attente de son témoignage.",
     rating: 5,
-    avatar: "/images/testimonials/naim.png"
+    avatar: "./images/testimonials/naim.png"
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const testimonials = [
     company: "Université Paris Cité",
     content: "En attente de son témoignage.",
     rating: 5,
-    avatar: "/images/testimonials/maroun.png"
+    avatar: "./images/testimonials/maroun.png"
   }
 ];
 
