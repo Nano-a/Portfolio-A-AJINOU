@@ -1,9 +1,9 @@
-import React from 'react';
+import { Scene3D } from '@/components/3d/Scene3D';
+import ShinyText from '@/components/ui/ShinyText';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
 import { ArrowDown, Download, Github, Linkedin, Mail } from 'lucide-react';
-import { Scene3D } from '@/components/3d/Scene3D';
-import { useLanguage } from '@/contexts/LanguageContext';
-import ShinyText from '@/components/ui/ShinyText';
+import React from 'react';
 
 export const Hero: React.FC = () => {
   const { t } = useLanguage();
@@ -99,9 +99,9 @@ export const Hero: React.FC = () => {
               className="flex gap-6"
             >
               {[
-                { icon: Github, href: 'https://github.com', label: 'GitHub' },
-                { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-                { icon: Mail, href: 'mailto:alex@example.com', label: 'Email' }
+                { icon: Github, href: 'https://github.com/Nano-a', label: 'GitHub' },
+                { icon: Linkedin, href: 'https://www.linkedin.com/in/abderrahman-ajinou/', label: 'LinkedIn' },
+                { icon: Mail, href: 'mailto:abderrahman.ajinou@etu.u-paris.fr', label: 'Email' }
               ].map((social, index) => (
                 <motion.a
                   key={social.label}
@@ -160,8 +160,8 @@ export const Hero: React.FC = () => {
               >
                 <div className="w-full h-full rounded-full overflow-hidden bg-background">
                   <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
-                    alt="Alex Martin - Portrait professionnel"
+                    src="/images/profile/abderrahman-profile.png"
+                    alt="Abderrahman AJINOU - Portrait professionnel"
                     className="w-full h-full object-cover"
                   />
                 </div>

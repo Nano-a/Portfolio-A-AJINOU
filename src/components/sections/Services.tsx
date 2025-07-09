@@ -1,50 +1,36 @@
 
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Smartphone, Globe, Database, Brain, Shield } from 'lucide-react';
+import { Code, Database, Globe, Smartphone } from 'lucide-react';
+import React from 'react';
 
 const services = [
   {
     icon: Code,
-    title: "Développement Web",
-    description: "Création d'applications web modernes avec React, TypeScript et Node.js",
-    features: ["Applications SPA", "APIs REST", "Interfaces responsives"],
+    title: "Développement Web de Base",
+    description: "Création de sites web simples avec HTML, CSS, JavaScript, PHP et gestion de bases de données MySQL",
+    features: ["Sites responsifs", "Intégration backend", "Interfaces intuitives"],
     color: "from-blue-500 to-cyan-500"
   },
   {
     icon: Smartphone,
-    title: "Applications Mobiles",
-    description: "Développement d'applications mobiles cross-platform avec React Native",
-    features: ["iOS & Android", "Interface native", "Performance optimisée"],
+    title: "Programmation Java",
+    description: "Développement d'applications ou jeux avec Java (JavaFX, AWT, Swing) basé sur les projets universitaires",
+    features: ["Interfaces graphiques", "Logique de jeu", "Collaboration équipe"],
     color: "from-green-500 to-emerald-500"
   },
   {
     icon: Globe,
-    title: "Sites Web Vitrine",
-    description: "Conception de sites web professionnels et portfolios personnalisés",
-    features: ["Design moderne", "SEO optimisé", "Multi-plateformes"],
+    title: "Support en Gestion de Projet",
+    description: "Assistance dans la planification et la coordination de projets avec méthodologies Agile/Scrum",
+    features: ["Agile/Scrum", "Coordination équipe", "Suivi des délais"],
     color: "from-purple-500 to-pink-500"
   },
   {
     icon: Database,
     title: "Bases de Données",
-    description: "Conception et optimisation de bases de données relationnelles et NoSQL",
-    features: ["MySQL/PostgreSQL", "MongoDB", "Optimisation requêtes"],
+    description: "Conception et gestion de bases de données MySQL avec requêtes SQL optimisées",
+    features: ["MySQL", "Requêtes optimisées", "Intégration web"],
     color: "from-orange-500 to-red-500"
-  },
-  {
-    icon: Brain,
-    title: "Intelligence Artificielle",
-    description: "Développement de solutions IA et machine learning",
-    features: ["Chatbots intelligents", "Analyse de données", "Modèles prédictifs"],
-    color: "from-indigo-500 to-purple-500"
-  },
-  {
-    icon: Shield,
-    title: "Cybersécurité",
-    description: "Audit de sécurité et tests de pénétration pour applications web",
-    features: ["Tests de sécurité", "Audit de code", "Recommandations"],
-    color: "from-red-500 to-orange-500"
   }
 ];
 

@@ -1,40 +1,44 @@
 
-import React from 'react';
-import { motion } from 'framer-motion';
 import { Progress } from '@/components/ui/progress';
+import { motion } from 'framer-motion';
+import React from 'react';
 
 const skillCategories = [
   {
     title: "Langages de Programmation",
     skills: [
-      { name: "JavaScript/TypeScript", level: 90 },
+      { name: "Java", level: 90 },
       { name: "Python", level: 85 },
-      { name: "Java", level: 80 },
-      { name: "C/C++", level: 75 },
-      { name: "HTML/CSS", level: 95 },
-      { name: "SQL", level: 85 }
+      { name: "C++", level: 75 },
+      { name: "JavaScript", level: 70 },
+      { name: "C", level: 65 },
+      { name: "HTML/CSS", level: 88 },
+      { name: "PHP", level: 72 },
+      { name: "SQL", level: 80 },
+      { name: "OCaml", level: 60 }
     ]
   },
   {
-    title: "Frameworks & Bibliothèques",
+    title: "Frameworks & Technologies",
     skills: [
-      { name: "React", level: 90 },
-      { name: "Node.js", level: 85 },
-      { name: "Express.js", level: 80 },
-      { name: "Next.js", level: 75 },
-      { name: "Django", level: 70 },
-      { name: "Three.js", level: 65 }
+      { name: "JavaFX", level: 85 },
+      { name: "AWT/Swing", level: 80 },
+      { name: "Bootstrap", level: 75 },
+      { name: "Gradle", level: 70 },
+      { name: "JUnit", level: 75 },
+      { name: "Git/GitHub/GitLab", level: 80 }
     ]
   },
   {
-    title: "Outils & Technologies",
+    title: "Outils & Méthodologies",
     skills: [
-      { name: "Git/GitHub", level: 90 },
-      { name: "Docker", level: 75 },
-      { name: "AWS", level: 70 },
-      { name: "MongoDB", level: 80 },
-      { name: "PostgreSQL", level: 85 },
-      { name: "Figma", level: 80 }
+      { name: "Git", level: 80 },
+      { name: "GitHub", level: 80 },
+      { name: "GitLab", level: 80 },
+      { name: "Agile/Scrum", level: 75 },
+      { name: "MVC", level: 80 },
+      { name: "CI/CD", level: 70 },
+      { name: "Tests unitaires", level: 75 }
     ]
   }
 ];

@@ -1,7 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Calendar, MapPin, Building2 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { motion } from 'framer-motion';
+import { Building2, Calendar, MapPin } from 'lucide-react';
+import React from 'react';
 
 export const Experience: React.FC = () => {
   const { t } = useLanguage();
@@ -10,19 +10,19 @@ export const Experience: React.FC = () => {
     {
       title: t('experience.internship'),
       company: t('experience.internship.company'),
-      location: t('experience.location.paris'),
+      location: t('experience.location.lyon'),
       period: t('experience.internship.period'),
       description: t('experience.internship.desc'),
-      skills: ['React', 'TypeScript', 'Tailwind CSS', 'Git'],
+      skills: ['Soins d\'urgence', 'Premiers secours', 'Transport médical', 'Coordination'],
       type: t('experience.type.internship')
     },
     {
       title: t('experience.apprenticeship'),
       company: t('experience.apprenticeship.company'),
-      location: t('experience.location.lyon'),
+      location: t('experience.location.paris'),
       period: t('experience.apprenticeship.period'),
       description: t('experience.apprenticeship.desc'),
-      skills: ['Node.js', 'React', 'MongoDB', 'Express', 'Docker'],
+      skills: ['Gestion de stand', 'Vente', 'Gestion des paiements', 'Inventaire'],
       type: t('experience.type.apprenticeship')
     },
     {
@@ -31,7 +31,7 @@ export const Experience: React.FC = () => {
       location: t('experience.location.remote'),
       period: t('experience.freelance.period'),
       description: t('experience.freelance.desc'),
-      skills: ['HTML/CSS', 'JavaScript', 'WordPress', 'SEO'],
+      skills: ['Conseil client', 'Vente électronique', 'Support technique', 'Organisation'],
       type: t('experience.type.freelance')
     }
   ];

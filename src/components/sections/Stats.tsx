@@ -1,35 +1,35 @@
 
-import React, { useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Code, Clock, Award, FolderOpen } from 'lucide-react';
+import { Award, Clock, Code, FolderOpen } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
 
 const stats = [
   {
     icon: Code,
-    value: 50000,
+    value: 10000,
     label: "Lignes de code écrites",
     suffix: "+",
     color: "from-blue-500 to-cyan-500"
   },
   {
     icon: Clock,
-    value: 3500,
+    value: 5000,
     label: "Heures d'apprentissage sur 4 ans",
     suffix: "h",
     color: "from-green-500 to-emerald-500"
   },
   {
     icon: Award,
-    value: 25,
+    value: 12,
     label: "Compétences maîtrisées",
     suffix: "",
     color: "from-purple-500 to-pink-500"
   },
   {
     icon: FolderOpen,
-    value: 40,
+    value: 5,
     label: "Projets réalisés",
-    suffix: "+",
+    suffix: "",
     color: "from-orange-500 to-red-500"
   }
 ];

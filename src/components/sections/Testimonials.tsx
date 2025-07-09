@@ -1,35 +1,35 @@
 
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, Quote } from 'lucide-react';
+import { Quote, Star } from 'lucide-react';
+import React from 'react';
 
 const testimonials = [
   {
     id: 1,
-    name: "Marie Dubois",
-    role: "Professeure d'Informatique",
-    company: "Université Paris-Saclay",
-    content: "Alex fait preuve d'une excellente maîtrise technique et d'une grande créativité dans ses projets. Son approche méthodique et sa passion pour l'innovation en font un étudiant remarquable.",
+    name: "Sarah Salhi",
+    role: "Étudiante en Informatique/Médecine",
+    company: "Université Paris Cité",
+    content: "En attente de son témoignage.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b5ab?w=80&h=80&fit=crop&crop=face"
+    avatar: "/images/testimonials/sarah.png"
   },
   {
     id: 2,
-    name: "Thomas Martin",
-    role: "Développeur Senior",
-    company: "TechCorp Solutions",
-    content: "J'ai eu l'occasion de mentorer Alex lors de son stage. Sa capacité d'apprentissage rapide et son attention aux détails sont impressionnantes. Un futur développeur prometteur.",
+    name: "Naïm Cherchour",
+    role: "Étudiant en Informatique",
+    company: "Université Paris Cité",
+    content: "En attente de son témoignage.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face"
+    avatar: "/images/testimonials/naim.png"
   },
   {
     id: 3,
-    name: "Sophie Laurent",
-    role: "Chef de Projet",
-    company: "Digital Innovation Lab",
-    content: "Alex a collaboré avec notre équipe sur un projet d'IA. Sa compréhension des enjeux techniques et sa communication claire ont grandement contribué au succès du projet.",
+    name: "Gebrayel Maroun",
+    role: "Étudiant en Informatique",
+    company: "Université Paris Cité",
+    content: "En attente de son témoignage.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face"
+    avatar: "/images/testimonials/maroun.png"
   }
 ];
 

@@ -1,26 +1,26 @@
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Github, Linkedin } from 'lucide-react';
 import ShinyText from '@/components/ui/ShinyText';
+import { motion } from 'framer-motion';
+import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
+import React from 'react';
 
 const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'alex@example.com',
-    href: 'mailto:alex@example.com'
-  },
-  {
-    icon: Phone,
-    label: 'Téléphone',
-    value: '+33 6 12 34 56 78',
-    href: 'tel:+33612345678'
+    value: 'abderrahman.ajinou@etu.u-paris.fr',
+    href: 'mailto:abderrahman.ajinou@etu.u-paris.fr'
   },
   {
     icon: MapPin,
     label: 'Localisation',
     value: 'Paris, France',
+    href: '#'
+  },
+  {
+    icon: MapPin,
+    label: 'Université',
+    value: 'Université Paris Cité, Campus Grand Moulin',
     href: '#'
   }
 ];
@@ -29,13 +29,13 @@ const socialLinks = [
   {
     icon: Github,
     label: 'GitHub',
-    href: 'https://github.com',
+    href: 'https://github.com/Nano-a',
     color: 'hover:text-gray-600'
   },
   {
     icon: Linkedin,
     label: 'LinkedIn',
-    href: 'https://linkedin.com',
+    href: 'https://www.linkedin.com/in/abderrahman-ajinou/',
     color: 'hover:text-blue-600'
   }
 ];
