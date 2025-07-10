@@ -10,7 +10,14 @@ export const Hero: React.FC = () => {
 
   const handleDownloadCV = () => {
     // Ouvre le CV dans un nouvel onglet
-    window.open('/cv-alex-martin.pdf', '_blank');
+    window.open('/CV Abderrahman AJINOU.pdf', '_blank');
+    // Déclenche le téléchargement automatique
+    const link = document.createElement('a');
+    link.href = '/CV Abderrahman AJINOU.pdf';
+    link.download = 'CV_Abderrahman_AJINOU.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
