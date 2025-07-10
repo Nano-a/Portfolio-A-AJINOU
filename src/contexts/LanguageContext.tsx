@@ -142,7 +142,7 @@ const translations = {
     
     // Footer
     'footer.description': 'Étudiant en 2e année de Licence Informatique à l\'Université Paris Cité, créateur d\'expériences numériques innovantes.',
-    'footer.copyright': 'Conçu avec ❤️ par Abderrahman AJINOU - N° Étudiant : 22116322'
+    'footer.copyright': 'Conçu par Abderrahman AJINOU - N° Étudiant : 22116322'
   },
   en: {
     // Navigation
@@ -277,7 +277,7 @@ const translations = {
     
     // Footer
     'footer.description': '2nd year Computer Science student at Université Paris Cité, creator of innovative digital experiences.',
-    'footer.copyright': 'Designed with ❤️ by Abderrahman AJINOU - Student ID : 22116322'
+    'footer.copyright': 'Designed by Abderrahman AJINOU - Student ID : 22116322'
   }
 };
 

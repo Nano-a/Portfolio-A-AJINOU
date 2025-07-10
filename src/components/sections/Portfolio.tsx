@@ -265,6 +265,17 @@ export const Portfolio: React.FC = () => {
             ))}
           </div>
         </motion.div>
+        {/* Remarque animée */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 0.85, y: [10, 0, 10] }}
+          transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}
+          className="text-center mb-6"
+        >
+          <span className="inline-block px-4 py-2 rounded-full bg-white/70 text-sm text-black font-medium shadow-md animate-pulse select-none cursor-pointer">
+            💡 Astuce : Cliquez sur un projet pour voir plus de détails !
+          </span>
+        </motion.div>
 
         <motion.div
           layout
@@ -290,7 +301,7 @@ export const Portfolio: React.FC = () => {
               >
                 {/* Face avant */}
                 <div 
-                  className="absolute inset-0 bg-background rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+                  className="absolute inset-0 bg-background rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 overflow-y-auto h-96"
                   style={{ backfaceVisibility: 'hidden' }}
                 >
                   <div className="relative overflow-hidden">
@@ -338,7 +349,7 @@ export const Portfolio: React.FC = () => {
 
                 {/* Face arrière */}
                 <div 
-                  className="absolute inset-0 bg-background rounded-2xl overflow-hidden shadow-lg p-6 space-y-4"
+                  className="absolute inset-0 bg-background rounded-2xl overflow-hidden shadow-lg p-6 space-y-4 overflow-y-auto h-96"
                   style={{ 
                     backfaceVisibility: 'hidden',
                     transform: 'rotateY(180deg)'
