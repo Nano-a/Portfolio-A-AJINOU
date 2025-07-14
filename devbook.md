@@ -51,3 +51,23 @@
 - Copier index.html en 404.html permet de garantir que toutes les routes de l'application fonctionnent, même en cas de rafraîchissement ou d'accès direct à une sous-page.
 
 --- 
+
+## 4. Refonte footer, filtres, compteur dynamique, légende explicative (avril 2025)
+
+### Étapes réalisées :
+- [x] Correction du footer : suppression de toute mention d'Alex, personnalisation avec 'Portfolio Abderrahman AJINOU'.
+- [x] Transformation du champ 'category' en 'categories' (tableau) pour chaque projet dans Portfolio.tsx.
+- [x] Nouvelle logique de filtrage :
+    - Universitaire : affiche uniquement les projets universitaires
+    - Personnel : affiche tous les projets sauf universitaires (inclut IA, Certificat, Collaboration...)
+    - IA, CyberSécurité, Collaboration, Certificat : filtrage par tag
+- [x] Ajout de la légende explicative temporaire sous les filtres (avec traduction).
+- [x] Affichage dynamique du nombre de projets dans la section 'Mes Réalisations' (Stats) via une prop projectCount.
+- [x] Ajout des clés de traduction pour la légende dans LanguageContext.tsx.
+
+### Explications :
+- Ces modifications permettent une UX fidèle à la réalité de ton parcours, une navigation claire et une information toujours à jour.
+- La légende explicative aide le visiteur à comprendre la différence entre projets universitaires et personnels.
+- Le footer est désormais 100% personnalisé à ton identité.
+
+--- 

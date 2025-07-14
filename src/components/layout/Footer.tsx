@@ -1,8 +1,8 @@
 
-import React from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import React from 'react';
 
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
             className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent"
             whileHover={{ scale: 1.05 }}
           >
-            Portfolio Alex
+            Portfolio Abderrahman AJINOU
           </motion.div>
           
           <p className="text-muted-foreground max-w-md mx-auto">
@@ -62,7 +62,7 @@ export const Footer: React.FC = () => {
             viewport={{ once: true }}
           >
             <p className="text-sm text-muted-foreground">
-              © {currentYear} Alex Portfolio. {t('footer.copyright')}
+              © {currentYear} Portfolio Abderrahman AJINOU. {t('footer.copyright')}
             </p>
           </motion.div>
         </motion.div>

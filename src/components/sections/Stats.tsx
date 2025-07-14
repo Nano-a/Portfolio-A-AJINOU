@@ -1,39 +1,10 @@
 
+import { useLanguage } from '@/contexts/LanguageContext';
 import { motion, useInView } from 'framer-motion';
 import { Award, Clock, Code, FolderOpen } from 'lucide-react';
-import React, { useEffect, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 
-const stats = [
-  {
-    icon: Code,
-    value: 10000,
-    label: "Lignes de code écrites",
-    suffix: "+",
-    color: "from-blue-500 to-cyan-500"
-  },
-  {
-    icon: Clock,
-    value: 5000,
-    label: "Heures d'apprentissage sur 4 ans",
-    suffix: "h",
-    color: "from-green-500 to-emerald-500"
-  },
-  {
-    icon: Award,
-    value: 12,
-    label: "Compétences maîtrisées",
-    suffix: "",
-    color: "from-purple-500 to-pink-500"
-  },
-  {
-    icon: FolderOpen,
-    value: 5,
-    label: "Projets réalisés",
-    suffix: "",
-    color: "from-orange-500 to-red-500"
-  }
-];
-
+// Compteur animé pour les statistiques
 const AnimatedCounter: React.FC<{ 
   value: number; 
   duration?: number; 
@@ -42,18 +13,15 @@ const AnimatedCounter: React.FC<{
 }> = ({ value, duration = 2000, suffix = "", inView }) => {
   const [count, setCount] = useState(0);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!inView) return;
-    
     let startTime: number;
     let animationFrameId: number;
 
     const updateCount = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
-      
       setCount(Math.floor(progress * value));
-      
       if (progress < 1) {
         animationFrameId = requestAnimationFrame(updateCount);
       }
@@ -75,9 +43,40 @@ const AnimatedCounter: React.FC<{
   );
 };
 
-export const Stats: React.FC = () => {
+export const Stats: React.FC<{ projectCount?: number }> = ({ projectCount }) => {
   const ref = React.useRef(null);
   const inView = useInView(ref, { once: true, amount: 0.3 });
+  const { t } = useLanguage();
+  const stats = useMemo(() => [
+    {
+      icon: Code,
+      value: 10000,
+      label: t('stats.code'),
+      suffix: "+",
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      icon: Clock,
+      value: 5000,
+      label: t('stats.hours'),
+      suffix: "h",
+      color: "from-green-500 to-emerald-500"
+    },
+    {
+      icon: Award,
+      value: 12,
+      label: t('stats.skills'),
+      suffix: "",
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      icon: FolderOpen,
+      value: projectCount ?? 0,
+      label: t('stats.projects'),
+      suffix: "",
+      color: "from-orange-500 to-red-500"
+    }
+  ], [projectCount, t]);
 
   return (
     <section ref={ref} className="py-20 bg-muted/30">

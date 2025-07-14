@@ -3,6 +3,21 @@ import { motion } from 'framer-motion';
 import { Calendar, ExternalLink, Github, Target, Users } from 'lucide-react';
 import React, { useState } from 'react';
 
+// Version statique pour le comptage (sans traduction)
+export const projectsData = [
+  { categories: ["Universitaire"] },
+  { categories: ["Universitaire"] },
+  { categories: ["Universitaire"] },
+  { categories: ["Personnel"] },
+  { categories: ["Certificat", "Personnel"] },
+  { categories: ["Certificat", "Personnel"] },
+  { categories: ["Collaboration", "Personnel"] },
+  { categories: ["IA", "Personnel"] },
+  { categories: ["IA", "Personnel"] },
+  { categories: ["IA", "Personnel"] },
+  { categories: ["IA", "Personnel"] },
+];
+
 export const Portfolio: React.FC = () => {
   const { t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = React.useState("Tout");
@@ -16,7 +31,7 @@ export const Portfolio: React.FC = () => {
       fullDescription: t('portfolio.project1.full'),
       image: "./images/projects/pacman.png",
       tech: ["Java", "JavaFX", "Gradle", "MVC", "Git", "GitLab", "JUnit"],
-      category: "Universitaire",
+      categories: ["Universitaire"],
       type: "2D",
       duration: "4-5 mois",
       team: "5 étudiants",
@@ -32,7 +47,7 @@ export const Portfolio: React.FC = () => {
       fullDescription: t('portfolio.project2.full'),
       image: "./images/projects/tower-defense.png",
       tech: ["Java", "AWT", "Swing", "MVC", "Git", "GitHub"],
-      category: "Universitaire",
+      categories: ["Universitaire"],
       type: "2D",
       duration: "3-4 mois",
       team: "2 étudiants",
@@ -48,7 +63,7 @@ export const Portfolio: React.FC = () => {
       fullDescription: t('portfolio.project3.full'),
       image: "./images/projects/khet.png",
       tech: ["Java", "AWT", "Swing", "GitLab", "JUnit", "CI/CD", "MVC"],
-      category: "Universitaire",
+      categories: ["Universitaire"],
       type: "2D",
       duration: "4-5 mois",
       team: "5 étudiants",
@@ -64,7 +79,7 @@ export const Portfolio: React.FC = () => {
       fullDescription: t('portfolio.project4.full'),
       image: "./images/projects/website.png",
       tech: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "AOS", "Isotope", "Swiper"],
-      category: "Personnel",
+      categories: ["Personnel"],
       type: "2D",
       duration: "1 mois",
       team: "Solo",
@@ -80,7 +95,7 @@ export const Portfolio: React.FC = () => {
       fullDescription: t('portfolio.project5.full'),
       image: "./images/projects/python-cert.png",
       tech: ["Python", "Structures de données", "Fonctions", "Modules", "Exceptions"],
-      category: "Certificat",
+      categories: ["Certificat", "Personnel"],
       type: "2D",
       duration: "3 mois",
       team: "Solo",
@@ -96,7 +111,7 @@ export const Portfolio: React.FC = () => {
       fullDescription: t('portfolio.project6.full'),
       image: "./images/projects/microsoft-cert.png",
       tech: ["HTML5", "CSS3", "Responsive Design", "Multimédia", "Formulaires", "Accessibilité"],
-      category: "Certificat",
+      categories: ["Certificat", "Personnel"],
       type: "2D",
       duration: "2 mois",
       team: "Solo",
@@ -112,7 +127,7 @@ export const Portfolio: React.FC = () => {
       fullDescription: t('portfolio.project7.full'),
       image: "./images/projects/microsoft-cert.png",
       tech: ["Collaboration", "Développement web", "Développement logiciel", "Meilleures pratiques"],
-      category: "Collaboration",
+      categories: ["Collaboration", "Personnel"],
       type: "2D",
       duration: "6 mois",
       team: "Équipe Microsoft",
@@ -128,7 +143,7 @@ export const Portfolio: React.FC = () => {
       fullDescription: t('portfolio.project8.full'),
       image: "./images/projects/movie-recommender.png",
       tech: ["Python", "Flask", "scikit-learn", "pandas", "numpy", "matplotlib", "SVD", "Machine Learning"],
-      category: "IA",
+      categories: ["IA", "Personnel"],
       type: "Web",
       duration: "2-3 mois",
       team: "Solo",
@@ -144,7 +159,7 @@ export const Portfolio: React.FC = () => {
       fullDescription: t('portfolio.project9.full'),
       image: "./images/projects/medicinal-plant-classifier.png",
       tech: ["Python", "Flask", "scikit-learn", "pandas", "matplotlib", "seaborn", "RandomForest", "Machine Learning"],
-      category: "IA",
+      categories: ["IA", "Personnel"],
       type: "Web",
       duration: "2-3 mois",
       team: "Solo",
@@ -160,7 +175,7 @@ export const Portfolio: React.FC = () => {
       fullDescription: t('portfolio.project10.full'),
       image: "./images/projects/traffic-flow-predictor.png",
       tech: ["Python", "Flask", "scikit-learn", "pandas", "matplotlib", "seaborn", "RandomForest", "Machine Learning"],
-      category: "IA",
+      categories: ["IA", "Personnel"],
       type: "Web",
       duration: "2-3 mois",
       team: "Solo",
@@ -176,7 +191,7 @@ export const Portfolio: React.FC = () => {
       fullDescription: t('portfolio.project11.full'),
       image: "./images/projects/energy-demand-prediction.png",
       tech: ["Python", "Streamlit", "scikit-learn", "pandas", "numpy", "matplotlib", "seaborn", "LightGBM", "XGBoost", "TensorFlow", "LSTM", "Machine Learning", "Deep Learning"],
-      category: "IA",
+      categories: ["IA", "Personnel"],
       type: "Web",
       duration: "3-4 mois",
       team: "Solo",
@@ -210,14 +225,26 @@ export const Portfolio: React.FC = () => {
   };
 
   const filteredProjects = projects.filter(project => {
-    const categoryMatch = selectedCategory === t('portfolio.filter.all') || 
-      (selectedCategory === t('portfolio.filter.university') && project.category === "Universitaire") ||
-      (selectedCategory === t('portfolio.filter.personal') && project.category === "Personnel") ||
-      (selectedCategory === t('portfolio.filter.ai') && project.category === "IA") ||
-      (selectedCategory === t('portfolio.filter.cybersecurity') && project.category === "CyberSecurite") ||
-      (selectedCategory === t('portfolio.filter.collaboration') && project.category === "Collaboration") ||
-      (selectedCategory === t('portfolio.filter.certificate') && project.category === "Certificat");
-    return categoryMatch;
+    if (selectedCategory === t('portfolio.filter.all')) return true;
+    if (selectedCategory === t('portfolio.filter.university')) {
+      return project.categories.includes("Universitaire");
+    }
+    if (selectedCategory === t('portfolio.filter.personal')) {
+      return !project.categories.includes("Universitaire");
+    }
+    if (selectedCategory === t('portfolio.filter.ai')) {
+      return project.categories.includes("IA");
+    }
+    if (selectedCategory === t('portfolio.filter.cybersecurity')) {
+      return project.categories.includes("CyberSecurite");
+    }
+    if (selectedCategory === t('portfolio.filter.collaboration')) {
+      return project.categories.includes("Collaboration");
+    }
+    if (selectedCategory === t('portfolio.filter.certificate')) {
+      return project.categories.includes("Certificat");
+    }
+    return true;
   });
 
   return (
@@ -245,7 +272,7 @@ export const Portfolio: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-4 mb-4"
         >
           <div className="flex flex-wrap gap-2">
             {categories.map((category) => (
@@ -265,6 +292,15 @@ export const Portfolio: React.FC = () => {
             ))}
           </div>
         </motion.div>
+        {/* Légende explicative temporaire */}
+        <div className="text-center mb-4">
+          <span className="block text-xs text-muted-foreground">
+            {t('portfolio.legend.university')}
+          </span>
+          <span className="block text-xs text-muted-foreground">
+            {t('portfolio.legend.personal')}
+          </span>
+        </div>
         {/* Remarque animée */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -312,7 +348,7 @@ export const Portfolio: React.FC = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute top-4 left-4 px-3 py-1 bg-black/50 text-white text-xs rounded-full backdrop-blur-sm">
-                      {project.category}
+                      {project.categories.join(' / ')}
                     </div>
                   </div>
                   
