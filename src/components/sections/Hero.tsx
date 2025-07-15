@@ -9,11 +9,11 @@ export const Hero: React.FC = () => {
   const { t } = useLanguage();
 
   const handleDownloadCV = () => {
-    // Ouvre le CV dans un nouvel onglet
-    window.open('/CV Abderrahman AJINOU.pdf', '_blank');
-    // Déclenche le téléchargement automatique
+    // Chemin correct pour GitHub Pages et local
+    const cvPath = `${import.meta.env.BASE_URL}CV Abderrahman AJINOU.pdf`;
+    window.open(cvPath, '_blank');
     const link = document.createElement('a');
-    link.href = '/CV Abderrahman AJINOU.pdf';
+    link.href = cvPath;
     link.download = 'CV_Abderrahman_AJINOU.pdf';
     document.body.appendChild(link);
     link.click();
