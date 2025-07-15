@@ -41,6 +41,34 @@ const socialLinks = [
 ];
 
 export const Contact: React.FC = () => {
+  const [status, setStatus] = React.useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus('idle');
+    const form = e.currentTarget;
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value,
+    };
+    try {
+      const response = await fetch('https://formspree.io/f/mrblgqpw', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (response.ok) {
+        setStatus('success');
+        form.reset();
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  };
+
   return (
     <section id="contact" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
@@ -120,14 +148,23 @@ export const Contact: React.FC = () => {
           </motion.div>
 
           <motion.form
-            action="https://formspree.io/f/mrblgqpw"
-            method="POST"
+            onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="space-y-6"
           >
+            {status === 'success' && (
+              <div className="p-4 mb-4 rounded bg-green-100 text-green-800 font-semibold text-center">
+                Merci, votre message a bien été envoyé !
+              </div>
+            )}
+            {status === 'error' && (
+              <div className="p-4 mb-4 rounded bg-red-100 text-red-800 font-semibold text-center">
+                Une erreur est survenue, veuillez réessayer.
+              </div>
+            )}
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                 Nom
