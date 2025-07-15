@@ -120,6 +120,8 @@ export const Contact: React.FC = () => {
           </motion.div>
 
           <motion.form
+            action="https://formspree.io/f/mrblgqpw"
+            method="POST"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -133,6 +135,8 @@ export const Contact: React.FC = () => {
               <input
                 type="text"
                 id="name"
+                name="name"
+                required
                 className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                 placeholder="Votre nom"
               />
@@ -144,6 +148,8 @@ export const Contact: React.FC = () => {
               <input
                 type="email"
                 id="email"
+                name="email"
+                required
                 className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                 placeholder="votre@email.com"
               />
@@ -154,7 +160,9 @@ export const Contact: React.FC = () => {
               </label>
               <textarea
                 id="message"
+                name="message"
                 rows={5}
+                required
                 className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"
                 placeholder="Votre message..."
               />
