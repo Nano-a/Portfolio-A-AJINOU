@@ -20,8 +20,8 @@ const translations = {
     // Hero
     'hero.greeting': 'Salut, je suis',
     'hero.name': 'Abderrahman AJINOU',
-    'hero.title': 'Étudiant en 2e année de Licence Informatique',
-    'hero.description': 'Étudiant motivé en 2e année de Licence en Informatique à l\'Université Paris Cité, passionné par le développement logiciel, web, et la robotique. À la recherche d\'un stage en développement informatique pour l\'été 2024.',
+    'hero.title': 'Étudiant en 3e année de Licence Informatique',
+    'hero.description': 'Étudiant motivé en 3e année de Licence en Informatique à l\'Université Paris Cité, passionné par le développement logiciel, web, et la robotique. À la recherche d\'un stage/alternance en développement informatique/IA/CyberSécurité.',
     'hero.cta.cv': 'Télécharger CV',
     'hero.cta.contact': 'Me contacter',
     'hero.badge': '🎓 Licence Informatique - Université Paris Cité',
@@ -29,8 +29,8 @@ const translations = {
     
     // About
     'about.title': 'À propos',
-    'about.subtitle': 'Étudiant passionné en 2e année de Licence Informatique à l\'Université Paris Cité, je m\'épanouis dans la création d\'expériences numériques innovantes.',
-    'about.description1': 'Actuellement en 2e année de Licence en Informatique à l\'Université Paris Cité, je me passionne pour le développement logiciel, web, et la robotique. Mon parcours m\'a permis d\'acquérir une solide base en programmation Java, Python, et en développement web.',
+    'about.subtitle': 'Étudiant passionné en 3e année de Licence Informatique à l\'Université Paris Cité, je m\'épanouis dans la création d\'expériences numériques innovantes.',
+    'about.description1': 'Actuellement en 3e année de Licence en Informatique à l\'Université Paris Cité, je me passionne pour le développement logiciel, web, et la robotique. Mon parcours m\'a permis d\'acquérir une solide base en programmation Java, Python, et en développement web.',
     'about.description2': 'J\'aime relever des défis techniques et créer des solutions élégantes qui allient fonctionnalité et esthétique. Mon objectif est d\'intégrer un master d\'IA ou de CyberSécurité pour devenir CAIO ou CTO. Toujours curieux d\'apprendre, je reste à l\'affût des dernières tendances en développement.',
     'about.skill.development': 'Développement',
     'about.skill.development.desc': 'Java, Python, C++, JavaScript, HTML/CSS, PHP, SQL',
@@ -143,7 +143,7 @@ const translations = {
     'contact.title': 'Contact',
     
     // Footer
-    'footer.description': 'Étudiant en 2e année de Licence Informatique à l\'Université Paris Cité, créateur d\'expériences numériques innovantes.',
+    'footer.description': 'Étudiant en 3e année de Licence Informatique à l\'Université Paris Cité, créateur d\'expériences numériques innovantes.',
     'footer.copyright': 'Conçu par Abderrahman AJINOU - N° Étudiant : 22116322'
   },
   en: {
@@ -157,8 +157,8 @@ const translations = {
     // Hero
     'hero.greeting': 'Hi, I\'m',
     'hero.name': 'Abderrahman AJINOU',
-    'hero.title': '2nd Year Computer Science Student',
-    'hero.description': 'Motivated student in 2nd year of Computer Science License at Université Paris Cité, passionate about software development, web development, and robotics. Looking for a summer 2024 internship in computer development.',
+    'hero.title': '3rd Year Computer Science Student',
+    'hero.description': 'Motivated student in 3rd year of Computer Science License at Université Paris Cité, passionate about software development, web development, and robotics. Looking for an internship/apprenticeship in software/AI/Cybersecurity development.',
     'hero.cta.cv': 'Download CV',
     'hero.cta.contact': 'Contact Me',
     'hero.badge': '🎓 Computer Science License - Université Paris Cité',
@@ -166,8 +166,8 @@ const translations = {
     
     // About
     'about.title': 'About Me',
-    'about.subtitle': 'Passionate 2nd year Computer Science student at Université Paris Cité, I thrive in creating innovative digital experiences.',
-    'about.description1': 'Currently in 2nd year of Computer Science License at Université Paris Cité, I am passionate about software development, web development, and robotics. My journey has allowed me to acquire a solid foundation in Java, Python programming, and web development.',
+    'about.subtitle': 'Passionate 3rd year Computer Science student at Université Paris Cité, I thrive in creating innovative digital experiences.',
+    'about.description1': 'Currently in 3rd year of Computer Science License at Université Paris Cité, I am passionate about software development, web development, and robotics. My journey has allowed me to acquire a solid foundation in Java, Python programming, and web development.',
     'about.description2': 'I enjoy tackling technical challenges and creating elegant solutions that combine functionality and aesthetics. My goal is to integrate a master\'s degree in AI or Cybersecurity to become a CAIO or CTO. Always curious to learn, I stay on top of the latest development trends.',
     'about.skill.development': 'Development',
     'about.skill.development.desc': 'Java, Python, C++, JavaScript, HTML/CSS, PHP, SQL',
@@ -280,7 +280,7 @@ const translations = {
     'contact.title': 'Contact',
     
     // Footer
-    'footer.description': '2nd year Computer Science student at Université Paris Cité, creator of innovative digital experiences.',
+    'footer.description': '3rd year Computer Science student at Université Paris Cité, creator of innovative digital experiences.',
     'footer.copyright': 'Designed by Abderrahman AJINOU - Student ID : 22116322'
   }
 };

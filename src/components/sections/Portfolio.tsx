@@ -27,8 +27,8 @@ export const Portfolio: React.FC = () => {
     {
       id: 1,
       title: t('portfolio.project1.title'),
-      shortDescription: t('portfolio.project1.short'),
-      fullDescription: t('portfolio.project1.full'),
+      shortDescription: 'Description à venir',
+      fullDescription: 'Description à venir',
       image: "./images/projects/pacman.png",
       tech: ["Java", "JavaFX", "Gradle", "MVC", "Git", "GitLab", "JUnit"],
       categories: ["Universitaire"],
@@ -37,8 +37,8 @@ export const Portfolio: React.FC = () => {
       team: "5 étudiants",
       challenges: ["Architecture MVC", "Gestion des collisions", "Tests unitaires"],
       results: ["Déplacement fluide", "Animations fluides", "0 bugs critiques"],
-      demoUrl: "https://github.com/Nano-a/Pacman",
-      githubUrl: "https://github.com/Nano-a/Pacman"
+      demoUrl: "https://github.com/Nano-a/pacman-project",
+      githubUrl: "https://github.com/Nano-a/pacman-project"
     },
     {
       id: 2,
@@ -91,8 +91,8 @@ export const Portfolio: React.FC = () => {
     {
       id: 5,
       title: t('portfolio.project5.title'),
-      shortDescription: t('portfolio.project5.short'),
-      fullDescription: t('portfolio.project5.full'),
+      shortDescription: 'Description à venir',
+      fullDescription: 'Description à venir',
       image: "./images/projects/python-cert.png",
       tech: ["Python", "Structures de données", "Fonctions", "Modules", "Exceptions"],
       categories: ["Certificat", "Personnel"],
@@ -102,13 +102,13 @@ export const Portfolio: React.FC = () => {
       challenges: ["Apprentissage Python", "Structures complexes", "Gestion d'exceptions"],
       results: ["Certification PCAP", "Compétences validées", "06/05/2021"],
       demoUrl: "https://pythoninstitute.org/",
-      githubUrl: "https://pythoninstitute.org/"
+      githubUrl: undefined
     },
     {
       id: 6,
       title: t('portfolio.project6.title'),
-      shortDescription: t('portfolio.project6.short'),
-      fullDescription: t('portfolio.project6.full'),
+      shortDescription: 'Description à venir',
+      fullDescription: 'Description à venir',
       image: "./images/projects/microsoft-cert.png",
       tech: ["HTML5", "CSS3", "Responsive Design", "Multimédia", "Formulaires", "Accessibilité"],
       categories: ["Certificat", "Personnel"],
@@ -118,7 +118,7 @@ export const Portfolio: React.FC = () => {
       challenges: ["Développement web", "Design responsive", "Accessibilité"],
       results: ["Certification MTA", "ID: C2mH-DWQN", "09/03/2021"],
       demoUrl: "https://www.microsoft.com/",
-      githubUrl: "https://www.microsoft.com/"
+      githubUrl: undefined
     },
     {
       id: 7,
@@ -199,6 +199,38 @@ export const Portfolio: React.FC = () => {
       results: ["Système de prédiction avancé", "Interface Streamlit interactive", "Comparaison multi-modèles"],
       demoUrl: "https://github.com/Nano-a/energy-demand-prediction",
       githubUrl: "https://github.com/Nano-a/energy-demand-prediction"
+    },
+    {
+      id: 12,
+      title: 'Collaboration CVML Exercise',
+      shortDescription: 'Contribution à un dépôt avancé de Computer Vision & Machine Learning : ajout d’un pipeline complet d’analyse géospatiale multi-spectrale (ex29), incluant scripts Python, génération de données, visualisation, documentation et tests.',
+      fullDescription: `Ce projet open source regroupe des exercices avancés de vision par ordinateur et d’apprentissage automatique, destinés à la recherche et à l’enseignement supérieur.\nJ’ai contribué en développant l’exercice ex29 :\n- Pipeline complet pour l’analyse géospatiale à partir d’images satellites multi-spectrales (Sentinel)\n- Scripts Python : téléchargement, prétraitement, fusion, classification, visualisation\n- Génération de données de test et automatisation des tests\n- Documentation détaillée (README, instructions d’installation, d’utilisation, analyse des résultats)\n- Configuration (YAML, requirements.txt)\n- Pull Request acceptée et intégrée au dépôt principal\n\nCompétences mobilisées : Python, Machine Learning, Computer Vision, traitement d’images satellites, automatisation, documentation technique, collaboration open source.\n\nRésultats :\n- Pipeline reproductible et documenté\n- Visualisations avancées (cartes, matrices de confusion, analyses temporelles)\n- Contribution reconnue (PullShark badge)`,
+      image: "./images/projects/website.png",
+      tech: ["Python", "Machine Learning", "Computer Vision", "Satellite imagery", "Open Source", "Documentation"],
+      categories: ["Collaboration", "Personnel"],
+      type: "Web",
+      duration: "1 mois",
+      team: "Collaboration Open Source",
+      challenges: ["Pipeline géospatial complet", "Automatisation des tests"],
+      results: ["Pipeline reproductible", "Visualisations avancées", "Contribution reconnue"],
+      demoUrl: undefined,
+      githubUrl: "https://github.com/Nano-a/cvml-exercise"
+    },
+    {
+      id: 13,
+      title: 'Collaboration WaterMarkIt',
+      shortDescription: 'Description à venir',
+      fullDescription: 'Description à venir',
+      image: "./images/projects/website.png",
+      tech: ["Python", "Machine Learning", "Watermarking"],
+      categories: ["Collaboration", "Personnel"],
+      type: "Web",
+      duration: "1 mois",
+      team: "Collaboration Open Source",
+      challenges: ["Pull Request", "Contribution externe"],
+      results: ["Badge PullShark", "Contribution acceptée"],
+      demoUrl: undefined,
+      githubUrl: "https://github.com/Nano-a/WaterMarkIt"
     }
   ];
 
@@ -420,26 +452,30 @@ export const Portfolio: React.FC = () => {
                     </div>
                     
                     <div className="flex gap-2 pt-2">
-                      <motion.a
-                        href={project.demoUrl}
-                        className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium text-xs hover:shadow-lg transition-all duration-300"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <ExternalLink size={12} />
-                        {t('portfolio.demo')}
-                      </motion.a>
-                      <motion.a
-                        href={project.githubUrl}
-                        className="flex-1 flex items-center justify-center gap-2 px-3 py-2 border border-border text-foreground rounded-lg font-medium text-xs hover:bg-muted transition-all duration-300"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <Github size={12} />
-                        {t('portfolio.code')}
-                      </motion.a>
+                      {project.demoUrl && (
+                        <motion.a
+                          href={project.demoUrl}
+                          className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium text-xs hover:shadow-lg transition-all duration-300"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <ExternalLink size={12} />
+                          {t('portfolio.demo')}
+                        </motion.a>
+                      )}
+                      {project.githubUrl && (
+                        <motion.a
+                          href={project.githubUrl}
+                          className="flex-1 flex items-center justify-center gap-2 px-3 py-2 border border-border text-foreground rounded-lg font-medium text-xs hover:bg-muted transition-all duration-300"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <Github size={12} />
+                          {t('portfolio.code')}
+                        </motion.a>
+                      )}
                     </div>
                   </div>
                 </div>
