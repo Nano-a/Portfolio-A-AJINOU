@@ -121,22 +121,6 @@ export const Portfolio: React.FC = () => {
       githubUrl: undefined
     },
     {
-      id: 7,
-      title: t('portfolio.project7.title'),
-      shortDescription: t('portfolio.project7.short'),
-      fullDescription: t('portfolio.project7.full'),
-      image: "./images/projects/microsoft-cert.png",
-      tech: ["Collaboration", "Développement web", "Développement logiciel", "Meilleures pratiques"],
-      categories: ["Collaboration", "Personnel"],
-      type: "2D",
-      duration: "6 mois",
-      team: "Équipe Microsoft",
-      challenges: ["Travail en équipe", "Projets complexes", "Standards Microsoft"],
-      results: ["Collaboration réussie", "Solutions innovantes", "Expérience professionnelle"],
-      demoUrl: "https://www.microsoft.com/",
-      githubUrl: "https://www.microsoft.com/"
-    },
-    {
       id: 8,
       title: t('portfolio.project8.title'),
       shortDescription: t('portfolio.project8.short'),
