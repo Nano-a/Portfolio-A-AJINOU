@@ -421,7 +421,7 @@ export const Portfolio: React.FC = () => {
               >
                 {/* Face avant */}
                 <div 
-                  className="absolute inset-0 bg-background rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 overflow-y-auto h-96"
+                  className="absolute inset-0 bg-background rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 overflow-y-auto h-96 card-scroll"
                   style={{ backfaceVisibility: 'hidden' }}
                 >
                   <div className="relative overflow-hidden">
@@ -469,7 +469,7 @@ export const Portfolio: React.FC = () => {
 
                 {/* Face arrière */}
                 <div 
-                  className="absolute inset-0 bg-background rounded-2xl overflow-hidden shadow-lg p-6 space-y-4 overflow-y-auto h-96"
+                  className="absolute inset-0 bg-background rounded-2xl overflow-hidden shadow-lg p-6 space-y-4 overflow-y-auto h-96 card-scroll"
                   style={{ 
                     backfaceVisibility: 'hidden',
                     transform: 'rotateY(180deg)'
