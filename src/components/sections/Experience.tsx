@@ -8,6 +8,15 @@ export const Experience: React.FC = () => {
 
   const experiences = [
     {
+      title: t('experience.restaurant'),
+      company: t('experience.restaurant.company'),
+      location: t('experience.location.idf'),
+      period: t('experience.restaurant.period'),
+      description: t('experience.restaurant.desc'),
+      skills: ['Gestion de caisse', 'Prise de commandes', 'Entretien des locaux', 'Polyvalence'],
+      type: t('experience.type.restaurant')
+    },
+    {
       title: t('experience.internship'),
       company: t('experience.internship.company'),
       location: t('experience.location.lyon'),
@@ -76,7 +85,9 @@ export const Experience: React.FC = () => {
                   >
                     <div className="flex items-center justify-between mb-4">
                       <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                        exp.type === t('experience.type.internship')
+                        exp.type === t('experience.type.restaurant')
+                          ? 'bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200'
+                          : exp.type === t('experience.type.internship')
                           ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
                           : exp.type === t('experience.type.apprenticeship')
                           ? 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200'

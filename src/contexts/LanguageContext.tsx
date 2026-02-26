@@ -73,6 +73,12 @@ const translations = {
     'experience.location.paris': 'Paris, France',
     'experience.location.lyon': 'Rabat, Maroc',
     'experience.location.remote': 'Salé Al Jadida, Maroc',
+    'experience.location.idf': 'Île-de-France',
+    'experience.restaurant': 'Gérant de restaurant',
+    'experience.restaurant.company': 'HALTE – Restaurant Avicenne',
+    'experience.restaurant.period': '2025 – en cours',
+    'experience.restaurant.desc': 'Gestion autonome et complète du restaurant : accueil des clients, prise de commandes sur place et par téléphone, encaissement, entretien des locaux et gestion des stocks. Amplitude horaire 11h30–22h00 en continu (pause déjeuner de 15 min), polyvalence totale sans supervision directe.',
+    'experience.type.restaurant': 'Gestion',
     
     // Portfolio
     'portfolio.title': 'Projets',
@@ -219,6 +225,12 @@ const translations = {
     'experience.location.paris': 'Paris, France',
     'experience.location.lyon': 'Rabat, Morocco',
     'experience.location.remote': 'Salé Al Jadida, Morocco',
+    'experience.location.idf': 'Île-de-France',
+    'experience.restaurant': 'Restaurant Manager',
+    'experience.restaurant.company': 'HALTE – Avicenne Restaurant',
+    'experience.restaurant.period': '2025 – present',
+    'experience.restaurant.desc': 'Full autonomous management of the restaurant: customer reception, order taking (on-site and by phone), cash handling, premises maintenance and stock management. Working hours 11:30–22:00 non-stop (15-min lunch break), fully versatile with no direct supervision.',
+    'experience.type.restaurant': 'Management',
     
     // Portfolio
     'portfolio.title': 'Projects',
