@@ -16,6 +16,10 @@ export const projectsData = [
   { categories: ["IA", "Personnel"] },
   { categories: ["IA", "Personnel"] },
   { categories: ["IA", "Personnel"] },
+  { categories: ["Universitaire"] },
+  { categories: ["Universitaire"] },
+  { categories: ["Personnel"] },
+  { categories: ["Universitaire"] },
 ];
 
 export const Portfolio: React.FC = () => {
@@ -215,6 +219,70 @@ export const Portfolio: React.FC = () => {
       results: ["Badge PullShark", "Contribution acceptée"],
       demoUrl: undefined,
       githubUrl: "https://github.com/Nano-a/WaterMarkIt"
+    },
+    {
+      id: 14,
+      title: t('portfolio.project14.title'),
+      shortDescription: t('portfolio.project14.short'),
+      fullDescription: t('portfolio.project14.full'),
+      image: "./images/projects/placeholder-qr.png",
+      tech: ["Java 21", "JavaFX", "Gradle", "MVC", "Threads virtuels", "TCP", "Design Patterns", "JUnit"],
+      categories: ["Universitaire"],
+      type: "2D",
+      duration: "4-5 mois",
+      team: "5 étudiants",
+      challenges: ["13 design patterns", "Multijoueur réseau TCP", "Algorithme de gradient"],
+      results: ["144 fichiers Java", "35 fichiers de tests", "Javadoc 100%"],
+      demoUrl: "https://github.com/Nano-a/Liquid-War",
+      githubUrl: "https://github.com/Nano-a/Liquid-War"
+    },
+    {
+      id: 15,
+      title: t('portfolio.project15.title'),
+      shortDescription: t('portfolio.project15.short'),
+      fullDescription: t('portfolio.project15.full'),
+      image: "./images/projects/placeholder-qr.png",
+      tech: ["C", "POSIX", "IPC", "FIFO", "Makefile", "Shell", "Tests automatisés"],
+      categories: ["Universitaire"],
+      type: "CLI",
+      duration: "3-4 mois",
+      team: "2 étudiants",
+      challenges: ["Communication IPC (FIFO)", "Protocole binaire", "Exécution isolée (setsid)"],
+      results: ["Démon fonctionnel", "Client CLI complet", "Tests automatisés"],
+      demoUrl: "https://github.com/Nano-a/unix-cron-ipc-scheduler",
+      githubUrl: "https://github.com/Nano-a/unix-cron-ipc-scheduler"
+    },
+    {
+      id: 16,
+      title: t('portfolio.project16.title'),
+      shortDescription: t('portfolio.project16.short'),
+      fullDescription: t('portfolio.project16.full'),
+      image: "./images/projects/placeholder-qr.png",
+      tech: ["HTML5", "CSS3", "Responsive Design"],
+      categories: ["Personnel"],
+      type: "Web",
+      duration: "2 semaines",
+      team: "Solo",
+      challenges: ["Design épuré", "Responsive mobile", "Présentation restaurant"],
+      results: ["Site en ligne", "Design responsive", "Navigation fluide"],
+      demoUrl: "https://github.com/Nano-a/HALTE",
+      githubUrl: "https://github.com/Nano-a/HALTE"
+    },
+    {
+      id: 17,
+      title: t('portfolio.project17.title'),
+      shortDescription: t('portfolio.project17.short'),
+      fullDescription: t('portfolio.project17.full'),
+      image: "./images/projects/placeholder-qr.png",
+      tech: ["OCaml", "Logique", "SAT", "DPLL", "Tests unitaires"],
+      categories: ["Universitaire"],
+      type: "CLI",
+      duration: "2-3 mois",
+      team: "2 étudiants",
+      challenges: ["Algorithme DPLL récursif", "Propagation unitaire", "Littéraux purs"],
+      results: ["Solveur fonctionnel", "Tests 100% passants", "Documentation complète"],
+      demoUrl: "https://github.com/Nano-a/dpll-solver",
+      githubUrl: "https://github.com/Nano-a/dpll-solver"
     }
   ];
 
