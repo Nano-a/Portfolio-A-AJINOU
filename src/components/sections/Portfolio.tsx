@@ -205,22 +205,6 @@ export const Portfolio: React.FC = () => {
       githubUrl: "https://github.com/Nano-a/cvml-exercise"
     },
     {
-      id: 13,
-      title: 'Collaboration WaterMarkIt',
-      shortDescription: 'Description à venir',
-      fullDescription: 'Description à venir',
-      image: "./images/projects/website.png",
-      tech: ["Python", "Machine Learning", "Watermarking"],
-      categories: ["Collaboration", "Personnel"],
-      type: "Web",
-      duration: "1 mois",
-      team: "Collaboration Open Source",
-      challenges: ["Pull Request", "Contribution externe"],
-      results: ["Badge PullShark", "Contribution acceptée"],
-      demoUrl: undefined,
-      githubUrl: "https://github.com/Nano-a/WaterMarkIt"
-    },
-    {
       id: 14,
       title: t('portfolio.project14.title'),
       shortDescription: t('portfolio.project14.short'),
