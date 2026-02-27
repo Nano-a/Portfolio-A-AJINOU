@@ -136,7 +136,7 @@ export const Portfolio: React.FC = () => {
       team: "5 étudiants",
       challenges: ["Architecture MVC sur 290+ fichiers", "Gestion des collisions et IA fantômes", "Système audio multicanal", "Interface multilingue"],
       results: ["3 niveaux de difficulté", "Mode histoire complet", "0 bugs critiques en soutenance"],
-      videoUrl: "/demo-pacman.mp4",
+      videoUrl: "/demo-pacman.webm",
       githubUrl: "https://github.com/Nano-a/pacman-project"
     },
     {
@@ -152,8 +152,7 @@ export const Portfolio: React.FC = () => {
       team: "2 étudiants",
       challenges: ["Placement stratégique", "Gestion des vagues", "Interface graphique"],
       results: ["Jeu fonctionnel", "Interface intuitive", "Projet 'mapso'"],
-      demoUrl: undefined,
-      videoUrl: "/demo-pacman.mp4",
+      videoUrl: "/demo-tower-defense.webm",
       githubUrl: "https://github.com/Nano-a/TowerDefense"
     },
     {
@@ -170,7 +169,7 @@ export const Portfolio: React.FC = () => {
       challenges: ["Logique de tir laser", "Gestion des interactions", "CI/CD"],
       results: ["Jeu de stratégie complet", "Tests automatisés", "Déploiement continu"],
       demoUrl: undefined,
-      videoUrl: "/demo-pacman.mp4",
+      videoUrl: "/demo-pacman.webm",
       githubUrl: "https://github.com/Nano-a/Khet-Chess-Laser"
     },
     {
@@ -187,7 +186,7 @@ export const Portfolio: React.FC = () => {
       challenges: ["Design responsive", "Animations AOS", "Galerie filtrable"],
       results: ["Site en ligne", "Navigation fluide", "Carrousel interactif"],
       demoUrl: undefined,
-      videoUrl: "/demo-pacman.mp4",
+      videoUrl: "/demo-pacman.webm",
       githubUrl: "https://github.com/Nano-a/portfolio-nano-a"
     },
     {
@@ -236,7 +235,7 @@ export const Portfolio: React.FC = () => {
       challenges: ["Filtrage collaboratif", "Prétraitement des données", "Évaluation RMSE"],
       results: ["Système de recommandation fonctionnel", "Interface web interactive", "Visualisations des données"],
       demoUrl: undefined,
-      videoUrl: "/demo-pacman.mp4",
+      videoUrl: "/demo-pacman.webm",
       githubUrl: "https://github.com/Nano-a/movie-recommender"
     },
     {
@@ -253,7 +252,7 @@ export const Portfolio: React.FC = () => {
       challenges: ["Classification binaire", "Prétraitement des données", "Évaluation multi-métriques"],
       results: ["Classificateur fonctionnel", "Interface web interactive", "Visualisations explicatives"],
       demoUrl: undefined,
-      videoUrl: "/demo-pacman.mp4",
+      videoUrl: "/demo-pacman.webm",
       githubUrl: "https://github.com/Nano-a/medicinal-plant-classifier"
     },
     {
@@ -270,7 +269,7 @@ export const Portfolio: React.FC = () => {
       challenges: ["Génération de données synthétiques", "Classification multi-classes", "Interface utilisateur"],
       results: ["Prédicteur de trafic fonctionnel", "Interface web interactive", "Statistiques en temps réel"],
       demoUrl: undefined,
-      videoUrl: "/demo-pacman.mp4",
+      videoUrl: "/demo-pacman.webm",
       githubUrl: "https://github.com/Nano-a/traffic-flow-predictor"
     },
     {
@@ -287,7 +286,7 @@ export const Portfolio: React.FC = () => {
       challenges: ["Feature engineering temporel", "Optimisation d'hyperparamètres", "Interface web complète"],
       results: ["Système de prédiction avancé", "Interface Streamlit interactive", "Comparaison multi-modèles"],
       demoUrl: undefined,
-      videoUrl: "/demo-pacman.mp4",
+      videoUrl: "/demo-pacman.webm",
       githubUrl: "https://github.com/Nano-a/energy-demand-prediction"
     },
     {
@@ -320,7 +319,7 @@ export const Portfolio: React.FC = () => {
       challenges: ["13 design patterns", "Multijoueur réseau TCP", "Algorithme de gradient"],
       results: ["144 fichiers Java", "35 fichiers de tests", "Javadoc 100%"],
       demoUrl: undefined,
-      videoUrl: "/demo-pacman.mp4",
+      videoUrl: "/demo-pacman.webm",
       githubUrl: "https://github.com/Nano-a/Liquid-War"
     },
     {
@@ -337,7 +336,7 @@ export const Portfolio: React.FC = () => {
       challenges: ["Communication IPC (FIFO)", "Protocole binaire", "Exécution isolée (setsid)"],
       results: ["Démon fonctionnel", "Client CLI complet", "Tests automatisés"],
       demoUrl: undefined,
-      videoUrl: "/demo-pacman.mp4",
+      videoUrl: "/demo-pacman.webm",
       githubUrl: "https://github.com/Nano-a/unix-cron-ipc-scheduler"
     },
     {
@@ -370,7 +369,7 @@ export const Portfolio: React.FC = () => {
       challenges: ["Algorithme DPLL récursif", "Propagation unitaire", "Littéraux purs"],
       results: ["Solveur fonctionnel", "Tests 100% passants", "Documentation complète"],
       demoUrl: undefined,
-      videoUrl: "/demo-pacman.mp4",
+      videoUrl: "/demo-pacman.webm",
       githubUrl: "https://github.com/Nano-a/dpll-solver"
     }
   ];
