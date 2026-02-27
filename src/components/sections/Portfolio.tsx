@@ -1,7 +1,101 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { motion } from 'framer-motion';
-import { Calendar, ExternalLink, Github, Target, Users } from 'lucide-react';
-import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Calendar, ExternalLink, Github, Info, Play, Target, Users, X } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+
+interface VideoModalProps {
+  src: string;
+  title: string;
+  onClose: () => void;
+  onInfo?: () => void;
+}
+
+const VideoModal: React.FC<VideoModalProps> = ({ src, title, onClose, onInfo }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose]);
+
+  return (
+    <AnimatePresence>
+      <motion.div
+        className="fixed inset-0 z-50 flex items-center justify-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={onClose}
+      >
+        {/* Fond sombre flouté */}
+        <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
+
+        {/* Fenêtre vidéo */}
+        <motion.div
+          className="relative z-10 w-full max-w-3xl mx-4 rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
+          style={{ background: 'hsl(222.2 84% 4.9%)' }}
+          initial={{ scale: 0.85, opacity: 0, y: 40 }}
+          animate={{ scale: 1, opacity: 1, y: 0 }}
+          exit={{ scale: 0.85, opacity: 0, y: 40 }}
+          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Barre de titre */}
+            <div className="flex items-center justify-between px-5 py-3 border-b border-white/10">
+              <div className="flex items-center gap-2">
+                <Play size={14} className="text-blue-400" />
+                <span className="text-sm font-semibold text-white/90">{title}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                {onInfo && (
+                  <motion.button
+                    onClick={onInfo}
+                    className="w-7 h-7 rounded-full flex items-center justify-center bg-white/10 hover:bg-blue-500/70 transition-colors duration-200"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    aria-label="Informations"
+                    title="Informations"
+                  >
+                    <Info size={14} className="text-white" />
+                  </motion.button>
+                )}
+                <motion.button
+                  onClick={onClose}
+                  className="w-7 h-7 rounded-full flex items-center justify-center bg-white/10 hover:bg-red-500/80 transition-colors duration-200"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  aria-label="Fermer"
+                  title="Fermer"
+                >
+                  <X size={14} className="text-white" />
+                </motion.button>
+              </div>
+            </div>
+
+          {/* Vidéo */}
+          <video
+            ref={videoRef}
+            src={src}
+            controls
+            autoPlay
+            className="w-full max-h-[70vh] bg-black"
+            style={{ display: 'block' }}
+          />
+
+          {/* Pied */}
+          <div className="px-5 py-2 border-t border-white/10 flex justify-end">
+            <span className="text-xs text-white/40">Appuie sur Échap pour fermer</span>
+          </div>
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
+  );
+};
 
 // Version statique pour le comptage (sans traduction)
 export const projectsData = [
@@ -26,22 +120,23 @@ export const Portfolio: React.FC = () => {
   const { t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = React.useState("Tout");
   const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set());
+  const [videoModal, setVideoModal] = useState<{ src: string; title: string } | null>(null);
 
   const projects = [
     {
       id: 1,
       title: t('portfolio.project1.title'),
-      shortDescription: 'Description à venir',
-      fullDescription: 'Description à venir',
+      shortDescription: 'Réimplémentation moderne du Pacman classique (1980) en Java 21 / JavaFX — thème Jungle, 3 niveaux de difficulté, mode histoire, interface multilingue.',
+      fullDescription: 'Projet universitaire de 4-5 mois réalisé en équipe de 5 (RaNaPauMaMane) à l\'Université Paris Cité. Réimplémentation du célèbre Pacman en Java 21 avec JavaFX et Gradle 8 : gameplay complet avec 3 niveaux de difficulté, système audio (musiques thématiques + effets sonores), interface multilingue FR/EN, animations fluides et thème Jungle revisité, mode histoire immersif, système de score et gestion des vies. Architecture MVC rigoureuse, tests unitaires JUnit, 290+ fichiers sources, Javadoc complète. Démo vidéo disponible.',
       image: "./images/projects/pacman.png",
-      tech: ["Java", "JavaFX", "Gradle", "MVC", "Git", "GitLab", "JUnit"],
+      tech: ["Java 21", "JavaFX", "Gradle", "MVC", "Git", "GitLab", "JUnit"],
       categories: ["Universitaire"],
-      type: "2D",
+      type: "2D Arcade",
       duration: "4-5 mois",
       team: "5 étudiants",
-      challenges: ["Architecture MVC", "Gestion des collisions", "Tests unitaires"],
-      results: ["Déplacement fluide", "Animations fluides", "0 bugs critiques"],
-      demoUrl: "https://github.com/Nano-a/pacman-project",
+      challenges: ["Architecture MVC sur 290+ fichiers", "Gestion des collisions et IA fantômes", "Système audio multicanal", "Interface multilingue"],
+      results: ["3 niveaux de difficulté", "Mode histoire complet", "0 bugs critiques en soutenance"],
+      videoUrl: "/demo-pacman.mp4",
       githubUrl: "https://github.com/Nano-a/pacman-project"
     },
     {
@@ -57,7 +152,8 @@ export const Portfolio: React.FC = () => {
       team: "2 étudiants",
       challenges: ["Placement stratégique", "Gestion des vagues", "Interface graphique"],
       results: ["Jeu fonctionnel", "Interface intuitive", "Projet 'mapso'"],
-      demoUrl: "https://github.com/Nano-a/TowerDefense",
+      demoUrl: undefined,
+      videoUrl: "/demo-pacman.mp4",
       githubUrl: "https://github.com/Nano-a/TowerDefense"
     },
     {
@@ -73,7 +169,8 @@ export const Portfolio: React.FC = () => {
       team: "5 étudiants",
       challenges: ["Logique de tir laser", "Gestion des interactions", "CI/CD"],
       results: ["Jeu de stratégie complet", "Tests automatisés", "Déploiement continu"],
-      demoUrl: "https://github.com/Nano-a/Khet-Chess-Laser",
+      demoUrl: undefined,
+      videoUrl: "/demo-pacman.mp4",
       githubUrl: "https://github.com/Nano-a/Khet-Chess-Laser"
     },
     {
@@ -89,7 +186,8 @@ export const Portfolio: React.FC = () => {
       team: "Solo",
       challenges: ["Design responsive", "Animations AOS", "Galerie filtrable"],
       results: ["Site en ligne", "Navigation fluide", "Carrousel interactif"],
-      demoUrl: "https://nano-a.github.io/portfolio-nano-a/",
+      demoUrl: undefined,
+      videoUrl: "/demo-pacman.mp4",
       githubUrl: "https://github.com/Nano-a/portfolio-nano-a"
     },
     {
@@ -137,7 +235,8 @@ export const Portfolio: React.FC = () => {
       team: "Solo",
       challenges: ["Filtrage collaboratif", "Prétraitement des données", "Évaluation RMSE"],
       results: ["Système de recommandation fonctionnel", "Interface web interactive", "Visualisations des données"],
-      demoUrl: "https://github.com/Nano-a/movie-recommender",
+      demoUrl: undefined,
+      videoUrl: "/demo-pacman.mp4",
       githubUrl: "https://github.com/Nano-a/movie-recommender"
     },
     {
@@ -153,7 +252,8 @@ export const Portfolio: React.FC = () => {
       team: "Solo",
       challenges: ["Classification binaire", "Prétraitement des données", "Évaluation multi-métriques"],
       results: ["Classificateur fonctionnel", "Interface web interactive", "Visualisations explicatives"],
-      demoUrl: "https://github.com/Nano-a/medicinal-plant-classifier",
+      demoUrl: undefined,
+      videoUrl: "/demo-pacman.mp4",
       githubUrl: "https://github.com/Nano-a/medicinal-plant-classifier"
     },
     {
@@ -169,7 +269,8 @@ export const Portfolio: React.FC = () => {
       team: "Solo",
       challenges: ["Génération de données synthétiques", "Classification multi-classes", "Interface utilisateur"],
       results: ["Prédicteur de trafic fonctionnel", "Interface web interactive", "Statistiques en temps réel"],
-      demoUrl: "https://github.com/Nano-a/traffic-flow-predictor",
+      demoUrl: undefined,
+      videoUrl: "/demo-pacman.mp4",
       githubUrl: "https://github.com/Nano-a/traffic-flow-predictor"
     },
     {
@@ -185,7 +286,8 @@ export const Portfolio: React.FC = () => {
       team: "Solo",
       challenges: ["Feature engineering temporel", "Optimisation d'hyperparamètres", "Interface web complète"],
       results: ["Système de prédiction avancé", "Interface Streamlit interactive", "Comparaison multi-modèles"],
-      demoUrl: "https://github.com/Nano-a/energy-demand-prediction",
+      demoUrl: undefined,
+      videoUrl: "/demo-pacman.mp4",
       githubUrl: "https://github.com/Nano-a/energy-demand-prediction"
     },
     {
@@ -217,7 +319,8 @@ export const Portfolio: React.FC = () => {
       team: "5 étudiants",
       challenges: ["13 design patterns", "Multijoueur réseau TCP", "Algorithme de gradient"],
       results: ["144 fichiers Java", "35 fichiers de tests", "Javadoc 100%"],
-      demoUrl: "https://github.com/Nano-a/Liquid-War",
+      demoUrl: undefined,
+      videoUrl: "/demo-pacman.mp4",
       githubUrl: "https://github.com/Nano-a/Liquid-War"
     },
     {
@@ -233,7 +336,8 @@ export const Portfolio: React.FC = () => {
       team: "2 étudiants",
       challenges: ["Communication IPC (FIFO)", "Protocole binaire", "Exécution isolée (setsid)"],
       results: ["Démon fonctionnel", "Client CLI complet", "Tests automatisés"],
-      demoUrl: "https://github.com/Nano-a/unix-cron-ipc-scheduler",
+      demoUrl: undefined,
+      videoUrl: "/demo-pacman.mp4",
       githubUrl: "https://github.com/Nano-a/unix-cron-ipc-scheduler"
     },
     {
@@ -265,7 +369,8 @@ export const Portfolio: React.FC = () => {
       team: "2 étudiants",
       challenges: ["Algorithme DPLL récursif", "Propagation unitaire", "Littéraux purs"],
       results: ["Solveur fonctionnel", "Tests 100% passants", "Documentation complète"],
-      demoUrl: "https://github.com/Nano-a/dpll-solver",
+      demoUrl: undefined,
+      videoUrl: "/demo-pacman.mp4",
       githubUrl: "https://github.com/Nano-a/dpll-solver"
     }
   ];
@@ -316,6 +421,7 @@ export const Portfolio: React.FC = () => {
   });
 
   return (
+    <>
     <section id="portfolio" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
         <motion.div
@@ -488,17 +594,32 @@ export const Portfolio: React.FC = () => {
                     </div>
                     
                     <div className="flex gap-2 pt-2">
-                      {project.demoUrl && (
-                        <motion.a
-                          href={project.demoUrl}
-                          className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium text-xs hover:shadow-lg transition-all duration-300"
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <ExternalLink size={12} />
-                          {t('portfolio.demo')}
-                        </motion.a>
+                      {(project.demoUrl || project.videoUrl) && (
+                        project.videoUrl ? (
+                          <motion.button
+                            className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium text-xs hover:shadow-lg transition-all duration-300"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setVideoModal({ src: project.videoUrl!, title: project.title });
+                            }}
+                          >
+                            <Play size={12} />
+                            {t('portfolio.demo')}
+                          </motion.button>
+                        ) : (
+                          <motion.a
+                            href={project.demoUrl}
+                            className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium text-xs hover:shadow-lg transition-all duration-300"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <ExternalLink size={12} />
+                            {t('portfolio.demo')}
+                          </motion.a>
+                        )
                       )}
                       {project.githubUrl && (
                         <motion.a
@@ -521,5 +642,16 @@ export const Portfolio: React.FC = () => {
         </motion.div>
       </div>
     </section>
+
+    {/* Modal vidéo */}
+    {videoModal && (
+      <VideoModal
+        src={videoModal.src}
+        title={videoModal.title}
+        onClose={() => setVideoModal(null)}
+        onInfo={() => console.log('info:', videoModal.title)}
+      />
+    )}
+    </>
   );
 };
